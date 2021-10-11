@@ -2388,3 +2388,23 @@ blockquote {
     margin: 0 auto;
     margin-right: 10px;
 }
+
+.send {
+    background-color: rgb(11, 165, 47);
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    padding: 10px 0;
+    margin: 20px 0;
+    display: none;
+}
+
+.error {
+    background-color: rgb(210, 85, 32);
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    padding: 10px 0;
+    margin: 20px 0;
+    display: none;
+}

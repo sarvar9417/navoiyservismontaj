@@ -181,10 +181,10 @@
                                 <img src="images/others/icon-2/1.png" alt="icon images">
                             </div>
                             <div class="offer__details">
-                                <h2 style="text-align: center;"><a href="#"
+                                <h2 style="text-align: center;"><a href="#contact"
                                         style="font-size: 16pt !important;">строительные услуги любой
                                         сложности</a></h2>
-                                <a class="image" href="single-service.html">
+                                <a class="image" href="#contact">
                                     <img src="https://leketi.ru/wp-content/uploads/2017/05/Stroitelnaya-firma.jpg"
                                         alt="service images">
                                 </a>
@@ -197,9 +197,10 @@
                                 <img src="images/others/icon-2/2.png" alt="icon images">
                             </div>
                             <div class="offer__details">
-                                <h2 style="text-align: center;"><a href="#" style="font-size: 16pt !important;">Сбор
+                                <h2 style="text-align: center;"><a href="#contact"
+                                        style="font-size: 16pt !important;">Сбор
                                         металлоконструкций</a></h2>
-                                <a class="image" href="single-service.html">
+                                <a class="image" href="#contact">
                                     <img src="https://samara.барспром.рф/images/2018/05/11/zaklad-karkas.jpg    "
                                         alt="service images">
                                 </a>
@@ -212,9 +213,9 @@
                                 <img src="images/others/icon-2/3.png" alt="icon images">
                             </div>
                             <div class="offer__details">
-                                <h2 style="text-align: center;"><a href="#"
+                                <h2 style="text-align: center;"><a href="#contact"
                                         style="font-size: 16pt !important;">Проведение газa</a></h2><br />
-                                <a class="image" href="single-service.html">
+                                <a class="image" href="#contact">
                                     <img src="https://static.tildacdn.com/tild6438-6164-4632-b661-666434333438/-/resize/504x/scale_1200.jpg"
                                         alt="service images">
                                 </a>
@@ -229,9 +230,9 @@
                                 <img src="images/others/icon-2/1.png" alt="icon images">
                             </div>
                             <div class="offer__details">
-                                <h2 style="text-align: center;"><a href="#"
+                                <h2 style="text-align: center;"><a href="#contact"
                                         style="font-size: 16pt !important;">Проведение воды</a></h2>
-                                <a class="image" href="single-service.html">
+                                <a class="image" href="#contact">
                                     <img src="https://oep.by/wp-content/uploads/2020/08/140627_CP_060.jpg"
                                         alt="service images">
                                 </a>
@@ -244,9 +245,9 @@
                                 <img src="images/others/icon-2/2.png" alt="icon images">
                             </div>
                             <div class="offer__details">
-                                <h2 style="text-align: center;"><a href="#"
+                                <h2 style="text-align: center;"><a href="#contact"
                                         style="font-size: 16pt !important;">Составление сметы</a></h2>
-                                <a class="image" href="">
+                                <a class="image" href="#contact">
                                     <img src="https://st15.stpulscen.ru/images/product/224/708/200_big.jpg"
                                         alt="service images">
                                 </a>
@@ -752,26 +753,24 @@
                         <div class="section__title text-left">
                             <h2 class="title__line">связаться <span class="text--theme">с нами</span></h2>
                         </div>
-                        <form id="contact-form"
-                            action="https://d29u17ylf1ylz9.cloudfront.net/simply-construction/mail-faq.php"
-                            method="post">
-                            <div class="clint__comment__form">
-                                <div class="single__cl__form">
-                                    <input name="name" type="text" placeholder="как вас зовут?">
-                                </div>
-                                <div class="single__cl__form">
-                                    <input name="telephone" type="tel" placeholder="укажите номер телефона">
-                                </div>
-                                <div class="single__cl__message">
-                                    <textarea name="message" placeholder="оставьте свой вопрос"></textarea>
-                                </div>
-                                <div class="clint__submit__btn">
-                                    <button class="submit htc__btn" type="submit">
-                                        Отправит
-                                    </button>
-                                </div>
+                        <div class="clint__comment__form">
+                            <div class="single__cl__form">
+                                <input id="name" name="name" type="text" placeholder="как вас зовут?">
                             </div>
-                        </form>
+                            <div class="single__cl__form">
+                                <input id="phone" name="phone" type="tel" placeholder="укажите номер телефона">
+                            </div>
+                            <div class="single__cl__message">
+                                <textarea id="message" name="message" placeholder="оставьте свой вопрос"></textarea>
+                            </div>
+                            <div class="clint__submit__btn">
+                                <button onclick="sendEmail()" class="submit htc__btn" type="submit">
+                                    Отправит
+                                </button>
+                            </div>
+                            <div id="send" class="send">Sending Message</div>
+                            <div id="error" class="error">Error sending</div>
+                        </div>
                         <p class="form-messege"></p>
                     </div>
                 </div>
@@ -862,7 +861,19 @@
                 center: [40.084849, 65.378138],
                 zoom: 15
             });
+            myPlacemark = new ymaps.Placemark([40.084888, 65.378110], {
+                hintContent: 'NSM Group',
+                bollonContent: "NSM Group"
+            })
+            myMap.geoObjects.add(myPlacemark)
         });
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_TxsNbpIonp9cZglg5EdqK");
+        })();
     </script>
 </body>
 
